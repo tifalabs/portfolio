@@ -42,3 +42,14 @@ Some repositories are private while they are still in progress. Demos, screensho
 ## Live Site
 
 https://tifalabs-portfolio.netlify.app
+
+## Case Studies
+
+Project writeups are available inside the site:
+
+- `/projects/security-learning-lab`
+- `/projects/cybpick`
+- `/projects/android-ai-server`
+- `/projects/portfolio`
+- `/projects/node-top`
+- `/projects/aegis-core`
