@@ -1,0 +1,49 @@
+header {
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111827;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+section {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111827;
+}
