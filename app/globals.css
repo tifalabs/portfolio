@@ -3,24 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: #f4f2ec;
+  --ink: #111111;
+  --panel: #ffffff;
+  --accent: #7aa2ff;
+  --accent-2: #e8cf63;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: url("/grass.jpeg") repeat,
-    linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-      rgb(var(--background-start-rgb));
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(122, 162, 255, 0.25), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(232, 207, 99, 0.25), transparent 30%),
+    linear-gradient(135deg, #f4f2ec 0%, #e8e3d8 100%);
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+::selection {
+  background: var(--accent-2);
+  color: var(--ink);
+}
+
+h1 {
+  max-width: 900px;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.08em;
+  text-transform: lowercase;
+  text-shadow: 4px 4px 0 rgba(122, 162, 255, 0.35);
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nes-container,
+.nes-dialog,
+.nes-balloon {
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.nes-container {
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.nes-container:hover {
+  transform: translateY(-2px);
+}
+
+.nes-btn {
+  transition: transform 0.12s ease;
+}
+
+.nes-btn:hover {
+  transform: translateY(-2px);
 }
 
 @layer utilities {
