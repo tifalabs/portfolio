@@ -11,8 +11,10 @@ const pressStart2P = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: "Tifa Labs | Retro Code Archive",
-  description:
-    "A retro 8-bit portfolio for Tifa Labs projects, cybersecurity learning, game dev experiments, and chaotic little code builds.",
+  description: "Retro 8-bit portfolio for Tifa Labs projects.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
