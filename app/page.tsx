@@ -1,44 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const projects = [
-  {
-    title: "security-learning-lab",
-    href: "https://github.com/tifalabs/security-learning-lab",
-    desc: "Cybersecurity learning lab for notes, safe practice, and security concepts.",
-    status: "Private / in progress",
-  },
-  {
-    title: "cybpick",
-    href: "https://github.com/tifalabs/cybpick",
-    desc: "Cyber-themed experiment from the Tifa Labs archive.",
-    status: "Private / in progress",
-  },
-  {
-    title: "android-ai-server",
-    href: "https://github.com/tifalabs/android-ai-server",
-    desc: "Android + AI server experiment for local/networked AI workflows.",
-    status: "Private / in progress",
-  },
-  {
-    title: "portfolio",
-    href: "https://github.com/tifalabs/portfolio",
-    desc: "This retro 8-bit portfolio built with Next.js, Tailwind, and NES.css.",
-    status: "Public / active",
-  },
-  {
-    title: "node-top",
-    href: "https://github.com/tifalabs/node-top",
-    desc: "Node.js experiment from the Tifa Labs repo collection.",
-    status: "Private / in progress",
-  },
-  {
-    title: "aegis-core",
-    href: "https://github.com/tifalabs/aegis-core",
-    desc: "Core experimental project with a security-inspired structure.",
-    status: "Private / in progress",
-  },
-];
+import { projects } from "./projects/project-data";
 
 export default function Home() {
   return (
@@ -58,7 +20,7 @@ export default function Home() {
           <Image
             width={100}
             height={100}
-            src={"/axe-and-shield.webp"}
+            src="/axe-and-shield.webp"
             alt="Pixel shield"
           />
 
@@ -91,15 +53,10 @@ export default function Home() {
 
         <div className="grid grid-cols-1 gap-4">
           {projects.map((project) => (
-            <Link
-              key={project.title}
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link key={project.slug} href={`/projects/${project.slug}`}>
               <div className="nes-container is-rounded hover:bg-gray-100">
                 <h3>{project.title}</h3>
-                <p>{project.desc}</p>
+                <p>{project.summary}</p>
                 <p>Status: {project.status}</p>
               </div>
             </Link>
